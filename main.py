@@ -28,7 +28,7 @@ def main():
 
     output = f"{message} Hello {webhook}"
 
-    print(f"::set-output name=myOutput::{output}")
+    print(f"::set-output name=results::{output}")
 
 
 if __name__ == "__main__":
