@@ -26,7 +26,7 @@ def main():
     webhook = os.environ["INPUT_WEBHOOK"]
     message = os.environ['INPUT_MESSAGE']
 
-    output = f"{message} Hello {webhook}"
+    output = f"{message} is send to {webhook}"
 
     print(f"::set-output name=results::{output}")
 
