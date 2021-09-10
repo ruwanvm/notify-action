@@ -1,0 +1,13 @@
+name: Integration Test
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@master
+      - name: Self test
+        id: selftest
+        uses: jacobtomlinson/python-container-action@master
+      - name: Check outputs
+        run: |
+          test "${{ steps.selftest.outputs.myOutput }}" == "Hello world"
