@@ -9,7 +9,7 @@ jobs:
         id: selftest
         uses: ruwanvm/notify-action@master
         with:
-          webhook: "new webhook"
+          webhook: ${{ secrets.CI_WEBHOOK_URL }}
       - name: Check outputs
         run: |
-          test "${{ steps.selftest.outputs.results }}" == "default message is send to new webhook"
+          test "${{ steps.selftest.outputs.results }}" == "default message is send to ${{ secrets.CI_WEBHOOK_URL }}"
