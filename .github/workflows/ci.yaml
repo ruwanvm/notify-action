@@ -7,7 +7,7 @@ jobs:
       - uses: actions/checkout@master
       - name: Self test
         id: selftest
-        uses: jacobtomlinson/python-container-action@master
+        uses: ruwanvm/notify-action@master
       - name: Check outputs
         run: |
-          test "${{ steps.selftest.outputs.myOutput }}" == "Hello world"
+          test "${{ steps.selftest.outputs.results }}" == "default message is send to default webhook"

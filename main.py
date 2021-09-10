@@ -12,8 +12,6 @@ def main():
     message = {'text': message}
     response = requests.post(webhook, data=json.dumps(message), headers={'Content-Type': 'application/json'})
 
-    results = response.status_code
-
     print(f"::set-output name=results::{results}")
 
 
