@@ -3,7 +3,7 @@ import os
 
 def main():
     webhook = os.environ['INPUT_WEBHOOK']
-    message = os.environ['message']
+    message = os.environ['INPUT_MESSAGE']
 
     results = f"{message} is send to {webhook}"
 
