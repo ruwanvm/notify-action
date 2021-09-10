@@ -1,23 +1,3 @@
-# import os
-# import requests
-# import json
-#
-#
-# def main():
-#     webhook = os.environ['INPUT_WEBHOOK']
-#     message = os.environ['INPUT_MESSAGE']
-#
-#     results = f"{message} is send to {webhook}"
-#
-#     message = {'text': message}
-#     response = requests.post(webhook, data=json.dumps(message), headers={'Content-Type': 'application/json'})
-#
-#     print(f"::set-output name=results::{results}")
-#
-#
-# if __name__ == "__main":
-#     main()
-
 import os
 import requests
 import json
@@ -26,8 +6,12 @@ import json
 def main():
     webhook = os.environ["INPUT_WEBHOOK"]
     message = os.environ['INPUT_MESSAGE']
+    git_repo = os.environ['GITHUB_REPOSITORY']
+    repo_branch = os.environ['GITHUB_REF']
 
-    encoded_message = {'text': message}
+    encoded_message = {
+        'text': f"*Repo* : {git_repo} :x:\n*Branch* : {repo_branch}\n*Details* : {message}"
+    }
     response = requests.post(webhook, data=json.dumps(encoded_message), headers={'Content-Type': 'application/json'})
 
     output = f"{message} is send to {webhook} with status {response.status_code}"
