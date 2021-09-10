@@ -1,15 +1,18 @@
-name: Notify message to Webhook
-description: This action is created to notify messages to given webhook
+name: "Notify message to Webhook"
+description: "This action is created to notify messages to given webhook"
+author: "Ruwan"
 inputs:
   webhook:
-    description: 'Webhook URL'
+    description: "Webhook URL"
     required: true
+    default: "default webhook"
   message:
-    description: Message to send
+    description: "Message to send"
     required: true
+    default: "default message"
 outputs:
   results:
-    description: Message sending details
+    description: "Message sending details"
 runs:
-  using: docker
-  image: Dockerfile
+  using: "docker"
+  image: "Dockerfile"
