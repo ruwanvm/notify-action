@@ -1,4 +1,6 @@
 import os
+import requests
+import json
 
 
 def main():
@@ -7,7 +9,10 @@ def main():
 
     results = f"{message} is send to {webhook}"
 
-    # Add notify code here
+    message = {'text': message}
+    response = requests.post(webhook, data=json.dumps(message), headers={'Content-Type': 'application/json'})
+
+    results = response.status_code
 
     print(f"::set-output name=results::{results}")
 
