@@ -11,7 +11,7 @@ inputs:
     required: true
     default: "default message"
 outputs:
-  results:
+  myOutput:
     description: "Message sending details"
 runs:
   using: "docker"

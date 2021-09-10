@@ -10,4 +10,4 @@ jobs:
         uses: ruwanvm/notify-action@master
       - name: Check outputs
         run: |
-          test "${{ steps.selftest.outputs.results }}" == "default message is send to default webhook"
+          test "${{ steps.selftest.outputs.myOutput }}" == "Hello default webhook"
