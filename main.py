@@ -7,7 +7,7 @@ def main():
 
     results = f"{message} is send to {webhook}"
 
-    print(results)
+    # Add notify code here
 
     print(f"::set-output name=results::{results}")
 
