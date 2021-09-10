@@ -1,13 +1,15 @@
 name: Integration Test
 on: [push, pull_request]
 jobs:
-  build:
+  integration_test:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@master
       - name: Self test
         id: selftest
         uses: ruwanvm/notify-action@master
+        with:
+          webhook: "new webhook"
       - name: Check outputs
         run: |
-          test "${{ steps.selftest.outputs.results }}" == "default message is send to default webhook"
+          test "${{ steps.selftest.outputs.results }}" == "default message is send to new webhook"
