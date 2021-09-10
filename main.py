@@ -27,8 +27,8 @@ def main():
     webhook = os.environ["INPUT_WEBHOOK"]
     message = os.environ['INPUT_MESSAGE']
 
-    message = {'text': message}
-    response = requests.post(webhook, data=json.dumps(message), headers={'Content-Type': 'application/json'})
+    encoded_message = {'text': message}
+    response = requests.post(webhook, data=json.dumps(encoded_message), headers={'Content-Type': 'application/json'})
 
     output = f"{message} is send to {webhook} with status {response.status_code}"
 
