@@ -19,14 +19,18 @@
 #     main()
 
 import os
-import requests  # noqa We are just importing this to prove the dependency installed correctly
+import requests
+import json
 
 
 def main():
     webhook = os.environ["INPUT_WEBHOOK"]
     message = os.environ['INPUT_MESSAGE']
 
-    output = f"{message} is send to {webhook}"
+    message = {'text': message}
+    response = requests.post(webhook, data=json.dumps(message), headers={'Content-Type': 'application/json'})
+
+    output = f"{message} is send to {webhook} with status {response.status_code}"
 
     print(f"::set-output name=results::{output}")
 
