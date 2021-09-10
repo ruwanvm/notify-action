@@ -2,7 +2,7 @@ name: Notify message to Webhook
 description: This action is created to notify messages to given webhook
 inputs:
   webhook:
-    description: Webhook URL
+    description: 'Webhook URL'
     required: true
   message:
     description: Message to send
