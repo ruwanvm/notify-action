@@ -23,11 +23,12 @@ import requests  # noqa We are just importing this to prove the dependency insta
 
 
 def main():
-    my_input = os.environ["INPUT_WEBHOOK"]
+    webhook = os.environ["INPUT_WEBHOOK"]
+    message = os.environ['INPUT_MESSAGE']
 
-    my_output = f"Hello {my_input}"
+    output = f"{message} Hello {webhook}"
 
-    print(f"::set-output name=myOutput::{my_output}")
+    print(f"::set-output name=myOutput::{output}")
 
 
 if __name__ == "__main__":
