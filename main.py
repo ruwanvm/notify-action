@@ -7,6 +7,8 @@ def main():
 
     results = f"{message} is send to {webhook}"
 
+    print(results)
+
     print(f"::set-output name=results::{results}")
 
 
