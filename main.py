@@ -30,11 +30,11 @@ def main():
                 "name": "User",
                 "value": user
             }, {
-                "name": "Message",
-                "value": message
-            }, {
                 "name": "Status",
                 "value": status
+            }, {
+                "name": "Message",
+                "value": message
             }],
             "markdown": True
         }]
