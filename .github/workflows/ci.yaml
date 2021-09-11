@@ -1,5 +1,8 @@
 name: Integration Test
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
 jobs:
   integration_test:
     runs-on: ubuntu-20.04
