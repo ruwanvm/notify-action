@@ -18,26 +18,55 @@ def main():
     }
 
     payload = {
-        "@type": "MessageCard",
-        "@context": "http://schema.org/extensions",
-        "themeColor": "0076D7",
-        "summary": git_repo,
-        "sections": [{
-            "activityTitle": git_repo,
-            "activitySubtitle": f"On {repo_branch} - {job} ({run_no})",
-            "activityImage": "https://teamsnodesample.azurewebsites.net/static/img/image6.png",
-            "facts": [{
-                "name": "User",
-                "value": user
-            }, {
-                "name": "Status",
-                "value": status
-            }, {
-                "name": "Message",
-                "value": message
-            }],
-            "markdown": True
-        }]
+        "blocks": [
+            {
+                "type": "header",
+                "text": {
+                    "type": "plain_text",
+                    "text": git_repo
+                }
+            },
+            {
+                "type": "divider"
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": f"On {repo_branch} - {job} ({run_no})"
+                }
+            },
+            {
+                "type": "divider"
+            },
+            {
+                "type": "section",
+                "fields": [
+                    {
+                        "type": "mrkdwn",
+                        "text": f"*User*: {user}"
+                    }
+                ]
+            },
+            {
+                "type": "section",
+                "fields": [
+                    {
+                        "type": "mrkdwn",
+                        "text": f"*Status*: {status}"
+                    }
+                ]
+            },
+            {
+                "type": "section",
+                "fields": [
+                    {
+                        "type": "mrkdwn",
+                        "text": "*Message* : Test Message from Another repo"
+                    }
+                ]
+            }
+        ]
     }
 
     response = requests.post(webhook, data=json.dumps(payload), headers=headers)
