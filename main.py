@@ -41,30 +41,15 @@ def main():
             },
             {
                 "type": "section",
-                "fields": [
-                    {
-                        "type": "mrkdwn",
-                        "text": f"*User*: {user}"
-                    }
-                ]
-            },
-            {
-                "type": "section",
-                "fields": [
-                    {
-                        "type": "mrkdwn",
-                        "text": f"*Status*: {status}"
-                    }
-                ]
-            },
-            {
-                "type": "section",
-                "fields": [
-                    {
-                        "type": "mrkdwn",
-                        "text": "*Message* : Test Message from Another repo"
-                    }
-                ]
+                "text": {
+                    "type": "mrkdwn",
+                    "text": f"*User*: {user}\n*Status*: {status}\n*Message* : {message}"
+                },
+                "accessory": {
+                    "type": "image",
+                    "image_url": "https://teamsnodesample.azurewebsites.net/static/img/image6.png",
+                    "alt_text": "GitHub"
+                }
             }
         ]
     }
