@@ -6,6 +6,7 @@ import json
 def main():
     webhook = os.environ["INPUT_WEBHOOK"]
     message = os.environ['INPUT_MESSAGE']
+    status = os.environ['INPUT_STATUS']
     git_repo = os.environ['GITHUB_REPOSITORY']
     repo_branch = os.environ['GITHUB_REF']
     user = os.environ['GITHUB_ACTOR']
@@ -33,7 +34,7 @@ def main():
                 "value": message
             }, {
                 "name": "Status",
-                "value": "Not started"
+                "value": status
             }],
             "markdown": True
         }]

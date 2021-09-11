@@ -10,6 +10,10 @@ inputs:
     description: "Message to send"
     required: true
     default: "default message"
+  status:
+    description: "Action Status"
+    required: false
+    default: "Success"
 outputs:
   results:
     description: "Message sending details"
