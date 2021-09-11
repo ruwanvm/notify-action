@@ -4,7 +4,6 @@ jobs:
   integration_test:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@master
       - name: Self test
         id: selftest
         uses: ruwanvm/notify-action@master

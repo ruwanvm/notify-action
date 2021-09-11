@@ -1,0 +1,12 @@
+on: [workflow_dispatch]
+
+jobs:
+  send_custom_message:
+    runs-on: ubuntu-20.04
+    name: custom message
+    steps:
+      - name: teams message
+        id: teams_message
+        uses: ruwanvm/notify-action@master
+        with:
+          webhook: ${{ secrets.TEAMS_WEBHOOK_URL }}
