@@ -71,7 +71,7 @@ def main():
 
     response = requests.post(webhook, data=json.dumps(payload), headers=headers)
 
-    output = f"{message} is send with status {response.status_code}"
+    output = f"Slack message is send with status {response.status_code}"
 
     print(f"::set-output name=results::{output}")
 
