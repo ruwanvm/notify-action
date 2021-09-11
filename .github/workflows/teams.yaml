@@ -10,4 +10,4 @@ jobs:
         with:
           webhook: ${{ secrets.TEAMS_WEBHOOK_URL }}
       - name: Check teams message send results
-        run: echo "${{ steps.selftest.outputs.results }}"
+        run: echo "${{ steps.teams_message.outputs.results }}"
