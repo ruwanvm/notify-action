@@ -1,0 +1,11 @@
+on: [workflow_dispatch]
+
+jobs:
+  teams_message_job:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Teams bessage Validation
+        id: teams_message
+        uses: ruwanvm/notify-action@teams
+        with:
+          webhook: ${{ secrets.TEAMS_WEBHOOK_URL }}
